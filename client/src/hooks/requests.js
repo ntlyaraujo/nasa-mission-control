@@ -16,6 +16,7 @@ async function httpGetLaunches() {
   try {
     const response = await fetch(`${API_URL}/launches`)
     const fetchedLaunches = await response.json()
+    console.log("fetchedLaunches: ", fetchedLaunches)
     return fetchedLaunches.sort((a, b) => {
       return a.flightNumber - b.flightNumber
     })
